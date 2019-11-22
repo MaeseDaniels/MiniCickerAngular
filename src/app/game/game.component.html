@@ -1,0 +1,8 @@
+<div class="game">
+  <h1>Good luck: {{name}}</h1>
+  <div class="game__table">
+    <div class="objective" [ngStyle]="pos" (click)="hit()"></div>
+  </div>
+  <div class="game__score">Score: {{score}}</div>
+  <div class="game__time">Time: {{time}}</div>
+</div>

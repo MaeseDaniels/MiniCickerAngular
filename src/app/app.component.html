@@ -1,0 +1,14 @@
+
+<div *ngIf="!isPlaying" class="container">
+  <h1>MiniClickerAngular</h1>
+  <div class="container__form">
+    <label for="name">Nickname: </label>
+    <input [(ngModel)]="name" type="text"/>
+    <div (click)="initGame()"  class="button">All Right!</div>
+  </div>
+  
+  
+
+</div>
+
+<app-game *ngIf="isPlaying" [name]="name" [finnishOver]="finnishOver"></app-game>
