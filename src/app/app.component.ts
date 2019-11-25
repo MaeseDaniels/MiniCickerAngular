@@ -1,30 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import Constants from './constants.service.ts';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: [ './app.component.css' ],
+  providers: [Constants]
 })
 export class AppComponent  {
-  name: string;
   isPlaying: boolean;
   errorNick: boolean;
   finnishOver: any;
 
-  constructor(){
+  constructor(private constants: Constants){
     this.finnishOver = () => {
-    this.isPlaying = false;
-  }
+      this.isPlaying = false;
+    }
+
   }
 
   OnInit() {
     this.isPlaying = false;
     this.errorNick = false;
-    this.name = "";
   }
 
   initGame() {
-    if(this.name != undefined && this.name.length >= 3 && this.name.length <= 8) {
+    if(this.constants.getNickName() != undefined && this.constants.getNickName().length >= 3 && this.constants.getNickName().length <= 8) {
       this.isPlaying = true;
     }
     else{
