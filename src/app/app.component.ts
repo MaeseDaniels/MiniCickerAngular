@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Constants from './constants.service.ts';
+import { Constants } from './constants.service.ts';
 
 @Component({
   selector: 'my-app',
@@ -16,7 +16,6 @@ export class AppComponent  {
     this.finnishOver = () => {
       this.isPlaying = false;
     }
-
   }
 
   OnInit() {
