@@ -11,6 +11,7 @@ export class AppComponent  {
   isPlaying: boolean;
   errorNick: boolean;
   finnishOver: any;
+  name: string;
 
   constructor(private constants: Constants){
     this.finnishOver = () => {
@@ -18,12 +19,13 @@ export class AppComponent  {
     }
   }
 
-  OnInit() {
+  ngOnInit() {
     this.isPlaying = false;
     this.errorNick = false;
   }
 
   initGame() {
+    this.constants.setNickName(this.name);
     if(this.constants.getNickName() != undefined && this.constants.getNickName().length >= 3 && this.constants.getNickName().length <= 8) {
       this.isPlaying = true;
     }

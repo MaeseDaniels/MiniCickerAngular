@@ -3,9 +3,9 @@
   <h1>MiniClickerAngular</h1>
   <div class="container__form">
     <label for="name">Nickname: </label>
-    <input (keyup.enter)="constants.setNickName(name)" [ngModel]="name"  type="text"/>
+    <input [(ngModel)]="name"  type="text"/>
     <div (click)="initGame()"  class="button">All Right!</div>
-    <span>{{constants.getNickName()}}</span>
+    <!-- <span>{{constants.getNickName()}},{{name}}</span> -->
   </div>
 </div>
 
